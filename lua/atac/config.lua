@@ -2,7 +2,9 @@ local constants = require("atac.utils.constants")
 local state = require("atac.state")
 
 local M = {
-	__DEFAULT_OPTIONS = {},
+	__DEFAULT_OPTIONS = {
+		dir = "/tmp/atac",
+	},
 }
 
 -- Initialize default options
@@ -19,6 +21,9 @@ end
 -- @return nil
 M.__register_user_options = function(user_options)
 	M.options = vim.tbl_deep_extend("keep", user_options or {}, M.__DEFAULT_OPTIONS)
+	if M.options.dir == M.__DEFAULT_OPTIONS.dir then
+		vim.fn.mkdir(M.options.dir, "p")
+	end
 end
 
 --- Prepare a clean augroup for the plugin to use

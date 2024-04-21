@@ -1,6 +1,6 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
-local M = {}
+local M = require("atac.config")
 
 local atac_term = nil -- Store the terminal object
 
@@ -14,7 +14,7 @@ function M.toggle_atac_terminal()
 	else
 		-- Create a floating terminal pane and run a custom command
 		atac_term = Terminal:new({
-			cmd = "atac -d ~/test",
+			cmd = "atac -d " .. M.options.dir,
 			direction = "float",
 			float_opts = { border = "double" },
 			on_open = function(term)
