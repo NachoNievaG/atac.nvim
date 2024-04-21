@@ -1,5 +1,5 @@
-local constants = require("lua.atac.utils.constants")
-local state = require("lua.atac.state")
+local constants = require("atac.utils.constants")
+local state = require("atac.state")
 
 local M = {
 	__DEFAULT_OPTIONS = {},
