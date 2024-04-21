@@ -51,19 +51,24 @@ Install the `atac.nvim` neovim plugin with your favorite package manager:
 [Lazy](https://github.com/folke/lazy.nvim)
 
 ```lua
-  {
-    "NachoNievaG/atac.nvim",
-    dependencies = { "akinsho/toggleterm.nvim" },
-    config = function() require("atac").setup {} end,
-    event = "BufRead", -- or any other event you might want to use.
-  },
+	{
+		"NachoNievaG/atac.nvim",
+		dependencies = { "akinsho/toggleterm.nvim" },
+		config = function()
+			require("atac").setup({
+				dir = "~/my/work/directory", -- By default, the dir will be set as /tmp/atac
+			})
+		end,
+	},
 ```
 
 [Packer](https://github.com/wbthomason/packer.nvim)
 ```lua
-  use {
-    "NachoNievaG/atac.nvim",
-    requires = { "akinsho/toggleterm.nvim" },
-    config = function() require('atac').setup() end
-  }
+    use {
+        "NachoNievaG/atac.nvim",
+        requires = { "akinsho/toggleterm.nvim" },
+        config = function() require('atac').setup({
+            dir = "~/my/work/directory", -- By default, the dir will be set as /tmp/atac
+        }) end
+    }
 ```
