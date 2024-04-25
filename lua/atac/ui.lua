@@ -15,6 +15,7 @@ function M.toggle_atac_terminal()
 		-- Create a floating terminal pane and run a custom command
 		atac_term = Terminal:new({
 			cmd = "atac -d " .. M.options.dir,
+			hidden = true,
 			direction = "float",
 			float_opts = { border = "double" },
 			on_open = function(term)
