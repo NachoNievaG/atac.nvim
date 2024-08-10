@@ -9,7 +9,7 @@ local atac_term = nil -- Store the terminal object
 -- @usage require("atac.ui").toggle_atac_terminal()
 function M.toggle_atac_terminal()
 	if atac_term and atac_term:is_open() then
-		atac_term:close()
+		-- atac_term:close()
 		atac_term = nil
 	else
 		-- Create a floating terminal pane and run a custom command
